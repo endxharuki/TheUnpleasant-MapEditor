@@ -1,0 +1,5 @@
+ObjectName,Position,Size,Rotation,fileName
+Sky,0,0,0,600,600,600,0,0,0
+MeshField,field1.csv
+Block,0,10,0,3,3,3,0,0,0
+Tree,20,0.525298,20,2,2,2,0,0,0

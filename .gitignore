@@ -30,3 +30,16 @@
 *.exe
 *.out
 *.app
+
+# Visual Studio files
+.vs/
+*.vcxproj.user
+
+# Build output
+x64/
+*.pdb
+*.ilk
+
+# 3D Models (too large for Git)
+*.fbx
+*.obj
