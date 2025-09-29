@@ -128,18 +128,10 @@ float Colider::SegmentDistance(const XMFLOAT3 vec1start, const XMFLOAT3 vec1end,
 
 	float a = Dot(d1, d1); //ü•”1‚Ì’·‚³‚Ì2æ
 	float e = Dot(d2, d2); //ü•”2‚Ì’·‚³‚Ì2æ
-	//float b = Dot(d1, d2);
-	//float c = Dot(d1, r);
+
 	float f = Dot(d2, r);
 
-
 	float s = 0.0f, t = 0.0f;
-	//float denom = a * e - b * b;
-	/*if (std::abs(denom) > 1e-6f)
-	{
-		s = (b * f - c * e) / denom;
-		t = (a * f - b * c) / denom;
-	}*/
 
 	if (a > 1e-6f && e > 1e-6)//’l‚ª¬‚³‚·‚¬‚È‚©‚Á‚½‚ç
 	{
@@ -314,34 +306,6 @@ bool Colider::CapsulesCollision(GameObject* capsuleColider1, GameObject* capsule
 
 				col2->SetPosition(Sub(otherPos, correction));
 				trans2->SetPosition(Sub(trans2Pos, correction));
-
-
-				////Ž©•ª‚ð“®‚©‚·
-				//XMFLOAT3 myStartPos = capsuleColider1->GetComponent<CapsuleColiderComponent>()->GetCapsule().startPos;
-				//XMFLOAT3 myEndPos = capsuleColider1->GetComponent<CapsuleColiderComponent>()->GetCapsule().endPos;
-
-				//correction = MulFloat(correction, 0.5f);
-
-				//CapsuleColiderComponent* col1 = capsuleColider1->GetComponent<CapsuleColiderComponent>();
-
-				//col1->SetCapsuleStartPos(Add(myStartPos, correction));
-				//col1->SetCapsuleStartPos(Add(myEndPos, correction));
-				//m_Position = Add(m_Position, correction);
-
-				//m_GameObject->GetComponent<Transform>()->SetPosition(m_Position);
-				////‘ŠŽè‚ð“®‚©‚·
-				//XMFLOAT3 otherPos = capsuleColider2->GetComponent<CapsuleColiderComponent>()->GetPosition();
-				//XMFLOAT3 otherStartPos = capsuleColider2->GetComponent<CapsuleColiderComponent>()->GetCapsule().startPos;
-				//XMFLOAT3 otherEndPos = capsuleColider2->GetComponent<CapsuleColiderComponent>()->GetCapsule().endPos;
-				//CapsuleColiderComponent* col2 = capsuleColider2->GetComponent<CapsuleColiderComponent>();
-
-
-				//col2->SetCapsuleStartPos(Sub(otherStartPos, correction));
-				//col2->SetCapsuleStartPos(Sub(otherEndPos, correction));
-
-				//XMFLOAT3 pos = Sub(otherPos, correction);
-				//col2->SetPosition(pos);
-				//capsuleColider2->GetComponent<Transform>()->SetPosition(pos);
 			}
 		}
 

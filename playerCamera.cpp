@@ -383,7 +383,7 @@ void PlayerCamera::DrawImGui()
 	XMFLOAT3 cameraPos = GetComponent<Transform3DComponent>()->GetPosition();
 
 	XMFLOAT3 vel = {m_Target.x - cameraPos.x,m_Target.x - cameraPos.x ,m_Target.x - cameraPos.x };
-	vel = GetComponent<GameObjectComponent>()->Normalize(vel);
+	vel = Normalize(vel);
 
 	float cameraPosTop = cameraPos.y + playerPos.y;
 	float cameraPosBottom = playerPos.y - (cameraPos.y - playerPos.y);

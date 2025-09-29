@@ -3,6 +3,7 @@
 #include <iostream>
 #include <list>
 #include "imgui.h"
+#include "math.h"
 
 class Component
 {

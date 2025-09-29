@@ -251,6 +251,11 @@ void MapCreateScene::DrawImGui()
 			{
 				AddGameObject<Block>(1)->GetComponent<Transform>()->SetPosition(XMFLOAT3(0.0f, 0.0f, 0.0f));
 			}
+			if (type == "Tree")
+			{
+				AddGameObject<Tree>(1)->GetComponent<Transform>()->SetPosition(XMFLOAT3(0.0f, 0.0f, 0.0f));
+			}
+			
 		}
 		ImGui::SameLine();
 	}

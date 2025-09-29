@@ -162,7 +162,7 @@ void MagicBlade::Update()
 		XMFLOAT3 targetPos = Scene::GetInstance()->GetScene<GameScene>()->GetGameObject<PlayerCamera>()->GetComponent<Circle2DColider>()->GetTragetWorldPosition();
 
 		m_TargetVector = { targetPos.x - playerPos.x,targetPos.y - playerPos.y ,targetPos.z - playerPos.z };
-		m_TargetVector = GetComponent<GameObjectComponent>()->Normalize(m_TargetVector);
+		m_TargetVector = Normalize(m_TargetVector);
 
 		GetComponent<CapsuleColiderComponent>()->MoveCollision();
 
@@ -249,7 +249,7 @@ void MagicBlade::HitAttackCollision()
 
 					pos.y += 2.0f;
 
-					XMFLOAT3 anglePos = GetComponent<Colider>()->GetAddAnglePosition(playerRot, XMFLOAT3(1.0f, 0.0f, 0.0f));
+					XMFLOAT3 anglePos = GetAddAnglePosition(playerRot, XMFLOAT3(1.0f, 0.0f, 0.0f));
 					anglePos = { anglePos.x * 0.5f,anglePos.y * 0.5f ,anglePos.z * 0.5f };
 					
 					int digits = std::log10(m_AttackPoint);

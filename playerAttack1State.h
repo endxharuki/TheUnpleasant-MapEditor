@@ -7,7 +7,7 @@ private:
 	//最初の攻撃のフレームと真偽
 	float attackFrame = 0.0f;
 	//次のアタックに移行するかどうか
-	bool next = false;
+	bool isNext = false;
 	
 
 public:

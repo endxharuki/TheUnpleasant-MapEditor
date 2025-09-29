@@ -6,9 +6,6 @@ class PlayerAttack2State : public PlayerState
 private:
 	//最初の攻撃のフレームと真偽
 	float attackFrame = 0.0f;
-	//次のアタックに移行するかどうか
-	bool next = false;
-
 
 public:
 	~PlayerAttack2State() = default;

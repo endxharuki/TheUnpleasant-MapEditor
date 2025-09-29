@@ -149,6 +149,7 @@
     <ClInclude Include="main.h" />
     <ClInclude Include="manager.h" />
     <ClInclude Include="mapCreateScene.h" />
+    <ClInclude Include="math.h" />
     <ClInclude Include="meshField.h" />
     <ClInclude Include="modelRenderer.h" />
     <ClInclude Include="particle.h" />

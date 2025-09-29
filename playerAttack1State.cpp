@@ -16,7 +16,7 @@ void PlayerAttack1State::Enter()
 	//UŒ‚‚ªI‚í‚é‚Ü‚Å‚Ù‚©‚Ìó‘Ô‚Ö‚ÌˆÚs‚Í‚Å‚«‚È‚¢
 	m_ChangePossible = false;
 	attackFrame = 50.0f;
-	next = false;
+	isNext = false;
 }
 
 void PlayerAttack1State::Update()
@@ -31,7 +31,7 @@ void PlayerAttack1State::Update()
 	{
 		if (Input::GetInstance()->GetKeyTrigger(VK_SPACE))
 		{
-			next = true;
+			isNext = true;
 		}
 	}
 
@@ -40,7 +40,7 @@ void PlayerAttack1State::Update()
 	if (attackFrame <= 0.0f)
 	{
 		m_ChangePossible = true;
-		if (next == true)
+		if (isNext == true)
 		{
 			m_ParentPlayer->ChangeState(StateType::Attack2);
 

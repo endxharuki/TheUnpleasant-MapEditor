@@ -144,7 +144,7 @@ void EditorCamera::Update()
 	XMFLOAT3 TransRot = trans->GetRotation();
 
 	XMFLOAT3 FowardVector = { rotatePosition.x - targetPos.x,rotatePosition.y - targetPos.y ,rotatePosition.z - targetPos.z };
-	FowardVector = trans->Normalize(FowardVector);
+	FowardVector = Normalize(FowardVector);
 	FowardVector = { FowardVector.x * cameraSpeed,FowardVector.y * cameraSpeed,FowardVector.z * cameraSpeed, };
 
 	float PI = 3.141592;
@@ -188,11 +188,11 @@ void EditorCamera::Update()
 
 
 			XMFLOAT3 TopVector = { rotatePos.x - targetPos.x,rotatePos.y - targetPos.y ,rotatePos.z - targetPos.z };
-			TopVector = trans->Normalize(TopVector);
+			TopVector = Normalize(TopVector);
 
 			//TopVector = {TopVector.x * }
 
-			TransPos = trans->Add(TransPos, TopVector);
+			TransPos = Add(TransPos, TopVector);
 
 		}
 		if (difference.y <= -1.0f)//↓
@@ -202,9 +202,6 @@ void EditorCamera::Update()
 
 
 		//カメラを上に移動させたい
-
-
-
 	}
 
 
@@ -244,23 +241,10 @@ void EditorCamera::Draw()
 
 void EditorCamera::DrawImGui()
 {
-	/*ImGui::SetNextWindowPos(ImVec2(300, 100));
-	ImGui::SetNextWindowSize(ImVec2(300,100));
-	ImGui::Begin("cameraOption");    */                      // Create a window called "Hello, world!" and append into it.              // Display some text (you can use a format strings too)
-
-	
-	//ImGUIをさわっていたら
-	//ImGuiIO& io = ImGui::GetIO();
-	//OnCursor = false;
-	//if (io.WantCaptureMouse) 
-	//{
-	//	OnCursor = true;// マウスがImGui要素に触れている（または操作されている）
-	//}
 	
 	ImguiManager* imgui = Scene::GetInstance()->GetScene<GameScene>()->GetImguiManager();
 
-
-	static  float speed = 0.0f;
+	static  float speed = 1.0f;
 
 	ImGui::SliderFloat("speed", &speed, 0.1f, 1.0f);
 	cameraSpeed = speed;
@@ -271,7 +255,6 @@ void EditorCamera::DrawImGui()
 	m_Sensitivity.y = xy[1];
 
 	ImGui::Text("wheel %.2f", GetMouseWheelDelta());
-	/*ImGui::End();*/
 
 	ImGui::Text("FPS = %.1f", imgui->FrameRate);
 }
