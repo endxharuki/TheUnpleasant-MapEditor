@@ -21,7 +21,7 @@ private:
 
 	ImguiManager* imgui = nullptr;
 
-	std::vector<std::string> availableObjectTypes = { "Block", "Tree", "Grass" };
+	std::vector<std::string> availableObjectTypes = { "Block", "Tree"};
 	
 	GameObject* m_EditObject = nullptr;
 

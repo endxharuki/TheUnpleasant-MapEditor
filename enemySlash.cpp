@@ -227,7 +227,7 @@ void EnemySlash::HitAttackCollision()
 
 					pos.y += 2.0f;
 
-					XMFLOAT3 anglePos = GetComponent<GameObjectComponent>()->GetAddAnglePosition(enemyRot, XMFLOAT3(1.0f, 0.0f, 0.0f));
+					XMFLOAT3 anglePos = GetAddAnglePosition(enemyRot, XMFLOAT3(1.0f, 0.0f, 0.0f));
 					anglePos = { anglePos.x * 0.5f,anglePos.y * 0.5f ,anglePos.z * 0.5f };
 					
 					int digits = std::log10(m_AttackPoint);
